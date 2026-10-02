@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аттестация гидов | Дагестан</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            font-size: 22px;
+            margin-bottom: 8px;
+            color: #1a1a1a;
+        }
+        .greeting {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 24px;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 16px;
+            margin-bottom: 12px;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.1s;
+            text-align: center;
+        }
+        .btn-primary {
+            background-color: #007aff;
+            color: white;
+        }
+        .btn-primary:hover {
+            background-color: #0066d6;
+        }
+        .btn-secondary {
+            background-color: #e5e5ea;
+            color: #1a1a1a;
+        }
+        .btn-secondary:hover {
+            background-color: #d1d1d6;
+        }
+        .btn:active {
+            transform: scale(0.98);
+        }
+        .content {
+            display: none;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #e5e5ea;
+        }
+        .content.active {
+            display: block;
+            animation: fadeIn 0.3s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .content h2 {
+            font-size: 18px;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+        }
+        .content ul {
+            padding-left: 20px;
+            margin-bottom: 16px;
+        }
+        .content li {
+            margin-bottom: 8px;
+        }
+        .content .note {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 14px;
+            margin-top: 16px;
+        }
+        .back-btn {
+            background: none;
+            border: none;
+            color: #007aff;
+            font-size: 15px;
+            cursor: pointer;
+            padding: 8px 0;
+            margin-bottom: 8px;
+        }
+        .back-btn:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Экран приветствия -->
+        <div id="screen-main">
+            <h1>Добро пожаловать!</h1>
+            <p class="greeting" id="greeting-text">Это информационный помощник Министерства по туризму и НХП Республики Дагестан.</p>
+            
+            <button class="btn btn-primary" onclick="showContent('attestation')">
+                📋 Как пройти аттестацию гида
+            </button>
+            <button class="btn btn-secondary" onclick="showContent('documents')">
+                📄 Необходимые документы
+            </button>
+            <button class="btn btn-secondary" onclick="showContent('contacts')">
+                📞 Контакты и полезные ссылки
+            </button>
+        </div>
+
+        <!-- Экран: Аттестация -->
+        <div id="content-attestation" class="content">
+            <button class="back-btn" onclick="goBack()">← Назад</button>
+            <h2>Как проходит аттестация</h2>
+            <p>Аттестация экскурсоводов (гидов) и гидов-переводчиков проводится в соответствии с постановлением Правительства РФ от 07.05.2022 № 833[reference:0].</p>
+            <ul>
+                <li><strong>Периодичность:</strong> Аттестацию необходимо проходить один раз в 5 лет[reference:1].</li>
+                <li><strong>Сроки:</strong> С 1 марта 2025 года экскурсионная деятельность без аттестации запрещена[reference:2].</li>
+                <li><strong>Этапы экзамена:</strong>
+                    <ul>
+                        <li><strong>Тестирование:</strong> 30 вопросов, нужно ответить верно минимум на 23[reference:3].</li>
+                        <li><strong>Практическое задание:</strong> Проведение экскурсии по билету перед комиссией[reference:4].</li>
+                    </ul>
+                </li>
+                <li><strong>Результат:</strong> Внесение в единый федеральный реестр и выдача нагрудной идентификационной карточки[reference:5].</li>
+            </ul>
+        </div>
+
+        <!-- Экран: Документы -->
+        <div id="content-documents" class="content">
+            <button class="back-btn" onclick="goBack()">← Назад</button>
+            <h2>Необходимые документы</h2>
+            <p>Для прохождения аттестации в Республике Дагестан потребуются[reference:6]:</p>
+            <ul>
+                <li>Заявление по установленной форме.</li>
+                <li>Копия документа, удостоверяющего личность и гражданство (паспорт РФ).</li>
+                <li>Копия документа об образовании (среднее профессиональное или высшее)[reference:7].</li>
+                <li>Документы, подтверждающие стаж работы в качестве экскурсовода (гида) или гида-переводчика[reference:8].</li>
+                <li>Документ, подтверждающий знание иностранного языка (для гидов-переводчиков)[reference:9].</li>
+            </ul>
+            <div class="note">
+                💡 Полный перечень документов и формы заявлений можно уточнить на официальном сайте Министерства.
+            </div>
+        </div>
+
+        <!-- Экран: Контакты -->
+        <div id="content-contacts" class="content">
+            <button class="back-btn" onclick="goBack()">← Назад</button>
+            <h2>Контакты и ссылки</h2>
+            <ul>
+                <li><strong>Официальный сайт:</strong> <a href="https://mintourismrd.ru" target="_blank">mintourismrd.ru</a></li>
+                <li><strong>Раздел документов:</strong> Памятки и формы заявлений на сайте Министерства.</li>
+                <li><strong>Телефон:</strong> Уточните в приёмной Министерства.</li>
+                <li><strong>Адрес:</strong> г. Махачкала, ул. [название улицы], д. [номер].</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Подключение библиотеки MAX Bridge -->
+    <script src="https://st.max.ru/js/max-web-app.js"></script>
+
+    <script>
+        // ==========================================
+        // 1. Персонализация: показываем имя пользователя
+        // ==========================================
+        if (window.WebApp) {
+            const user = window.WebApp.initDataUnsafe?.user;
+            if (user) {
+                const greetingEl = document.getElementById('greeting-text');
+                if (greetingEl) {
+                    greetingEl.textContent = `Здравствуйте, ${user.first_name}! Это информационный помощник Министерства по туризму и НХП Республики Дагестан.`;
+                }
+            }
+        }
+
+        // ==========================================
+        // 2. Логика переключения экранов (навигация)
+        // ==========================================
+        
+        // Показывает выбранный контент и скрывает главный экран
+        function showContent(screenId) {
+            // Скрываем все экраны с контентом
+            document.querySelectorAll('.content').forEach(el => {
+                el.classList.remove('active');
+            });
+            // Скрываем главный экран
+            document.getElementById('screen-main').style.display = 'none';
+            // Показываем нужный экран
+            const target = document.getElementById('content-' + screenId);
+            if (target) {
+                target.classList.add('active');
+            }
+        }
+
+        // Возвращает пользователя на главный экран
+        function goBack() {
+            // Скрываем все экраны с контентом
+            document.querySelectorAll('.content').forEach(el => {
+                el.classList.remove('active');
+            });
+            // Показываем главный экран
+            document.getElementById('screen-main').style.display = 'block';
+        }
+
+        // ==========================================
+        // 3. (Опционально) Сообщаем MAX, что приложение готово
+        // ==========================================
+        if (window.WebApp) {
+            // Можно вызвать метод, чтобы приложение сообщило о готовности
+            // window.WebApp.ready(); 
+            // Например, чтобы изменить цвет шапки:
+            // window.WebApp.setHeaderColor('#007aff');
+        }
+    </script>
+</body>
+</html>
